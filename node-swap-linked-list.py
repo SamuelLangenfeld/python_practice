@@ -13,12 +13,13 @@ class Node:
     def __repr__(self):
         return f"{self.value}, ({self.next.__repr__()})"
 
+
 def swap_every_two(llist):
     # Start with one node, need to switch references on every node
     # Start: 1 points to 2 points to 3 points to 4 points to None
     # becomes: 2 points to 1 points to 4 points to 3 points to None
     # aka: reference to 2, reference to 3, reference to 4, None reference
-    
+
     # naive solution -> just make a list, use indexes to swap references, nice and easy
     # O(2n), there might be a O(n) solution that I'm not seeing
     node_list = []
@@ -40,6 +41,7 @@ def swap_every_two(llist):
         else:
             node_list[index].next = None
     return node_list[0]
+
 
 llist = Node(1, Node(2, Node(3, Node(4, Node(5)))))
 print(swap_every_two(llist))
